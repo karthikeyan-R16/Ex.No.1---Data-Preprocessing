@@ -30,12 +30,75 @@ Taking care of missing data
 Encoding categorical data
 Normalizing the data
 Splitting the data into test and train
-
 ## PROGRAM:
 /Write your code here/
+import pandas as pd
+```
 
+df=pd.read_csv("/content/Churn_Modelling.csv")
+
+df.head()
+
+df.isnull().sum()
+
+df.drop(["RowNumber","Age","Gender","Geography","Surname"],inplace=True,axis=1)
+
+print(df)
+
+x=df.iloc[:,:-1].values
+
+y=df.iloc[:,-1].values
+
+print(x)
+
+print(y)
+
+from sklearn.preprocessing import MinMaxScaler
+
+scaler = MinMaxScaler()
+
+df1 = pd.DataFrame(scaler.fit_transform(df))
+
+print(df1)
+
+from sklearn.model_selection import train_test_split
+
+xtrain,ytrain,xtest,ytest=train_test_split(x,y,test_size=0.2,random_state=2)
+
+print(xtrain)
+
+print(len(xtrain))
+
+print(xtest)
+
+print(len(xtest))
+
+from sklearn.preprocessing import StandardScaler
+
+sc = StandardScaler()
+
+df1 = sc.fit_transform(df)
+
+print(df1)
+```
 ## OUTPUT:
-/ Show the result/
+ ![output](./228878770-5cb84e50-37d5-4192-bc82-bb947fec603e.png)
+
+ ![output](./2.png)
+
+ ![output](./3.png)
+
+ ![output](./4.png)
+
+ ![output](./5.png)
+
+ ![output](./6.png)
+
+ ![output](./7.png)
+
+ ![output](./8.png)
+
+ ![output](./9.png)
 
 ## RESULT
-/Type your result here/
+Thus,the program to perform Data preprocessing in a data set downloaded from Kaggle is implemented successfully..
