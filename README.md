@@ -30,75 +30,44 @@ Taking care of missing data
 Encoding categorical data
 Normalizing the data
 Splitting the data into test and train
+
 ## PROGRAM:
-/Write your code here/
+```
+developer Name: karthikeyan R
+Reg No        : 212222240045
 import pandas as pd
-```
-
-df=pd.read_csv("/content/Churn_Modelling.csv")
-
+df=pd.read_csv('/content/Churn_Modelling(1).csv')
 df.head()
-
 df.isnull().sum()
-
-df.drop(["RowNumber","Age","Gender","Geography","Surname"],inplace=True,axis=1)
-
+df.drop(['RowNumber','Age','Gender','Geography','Surname'],inplace=True,axis=1)
 print(df)
-
 x=df.iloc[:,:-1].values
-
-y=df.iloc[:,-1].values
-
+y=df.iloc[:,:-1].values
 print(x)
-
 print(y)
-
 from sklearn.preprocessing import MinMaxScaler
-
-scaler = MinMaxScaler()
-
-df1 = pd.DataFrame(scaler.fit_transform(df))
-
+Scaler = MinMaxScaler()
+df1  = pd.DataFrame(Scaler.fit_transform(df))
 print(df1)
-
 from sklearn.model_selection import train_test_split
-
 xtrain,ytrain,xtest,ytest=train_test_split(x,y,test_size=0.2,random_state=2)
-
 print(xtrain)
-
 print(len(xtrain))
-
 print(xtest)
-
 print(len(xtest))
-
 from sklearn.preprocessing import StandardScaler
-
 sc = StandardScaler()
-
 df1 = sc.fit_transform(df)
-
 print(df1)
 ```
-## OUTPUT:
- ![output](./228878770-5cb84e50-37d5-4192-bc82-bb947fec603e.png)
+## output
+![nn1 1](https://github.com/karthikeyan-R16/Ex.No.1---Data-Preprocessing/assets/119421232/4367a809-7ed7-44d3-a526-a381632f89ea)
 
- ![output](./2.png)
+![nn1 2](https://github.com/karthikeyan-R16/Ex.No.1---Data-Preprocessing/assets/119421232/57935baa-77e3-40a2-ab50-e15b0c8c8f22)
 
- ![output](./3.png)
+![nn1 3](https://github.com/karthikeyan-R16/Ex.No.1---Data-Preprocessing/assets/119421232/34628d08-2f87-447e-ae2f-bd3996016093)
 
- ![output](./4.png)
-
- ![output](./5.png)
-
- ![output](./6.png)
-
- ![output](./7.png)
-
- ![output](./8.png)
-
- ![output](./9.png)
+![nn1 4](https://github.com/karthikeyan-R16/Ex.No.1---Data-Preprocessing/assets/119421232/c3118fd9-3982-4086-9141-4569e04caddd)
 
 ## RESULT
 Thus,the program to perform Data preprocessing in a data set downloaded from Kaggle is implemented successfully..
